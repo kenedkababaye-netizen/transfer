@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftRide - Premium Bus Booking</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-bus-simple"></i> SwiftRide
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="routes.html">Travel Routes</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="login.html" class="btn btn-primary">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="fade-in">
+            <h1>Travel Beyond Boundaries</h1>
+            <p>Experience the ultimate comfort and reliability with SwiftRide. Book your next journey in just a few clicks.</p>
+            
+            <div class="search-container">
+                <form id="search-form" class="search-grid">
+                    <div class="input-group">
+                        <label><i class="fa-solid fa-location-dot"></i> Origin</label>
+                        <select name="from" id="from-select" required>
+                            <option value="">Select city...</option>
+                            <option value="Dar es Salaam">Dar es Salaam</option>
+                            <option value="Dodoma">Dodoma</option>
+                            <option value="Arusha">Arusha</option>
+                            <option value="Mwanza">Mwanza</option>
+                            <option value="Mbeya">Mbeya</option>
+                            <option value="Tanga">Tanga</option>
+                            <option value="Morogoro">Morogoro</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label><i class="fa-solid fa-location-arrow"></i> Destination</label>
+                        <select name="to" id="to-select" required>
+                            <option value="">Select city...</option>
+                            <option value="Dar es Salaam">Dar es Salaam</option>
+                            <option value="Dodoma">Dodoma</option>
+                            <option value="Arusha">Arusha</option>
+                            <option value="Mwanza">Mwanza</option>
+                            <option value="Mbeya">Mbeya</option>
+                            <option value="Tanga">Tanga</option>
+                            <option value="Morogoro">Morogoro</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label><i class="fa-solid fa-calendar-day"></i> Date</label>
+                        <input type="date" name="date" id="date-input" required>
+                    </div>
+                    <div class="input-group">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa-solid fa-magnifying-glass"></i> Search Buses
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="feature-card fade-in">
+            <div class="feature-icon">
+                <i class="fa-solid fa-couch"></i>
+            </div>
+            <h3>Premium Comfort</h3>
+            <p>Reclining leather seats with extra legroom and climate-controlled cabins.</p>
+        </div>
+        <div class="feature-card fade-in" style="animation-delay: 0.2s;">
+            <div class="feature-icon">
+                <i class="fa-solid fa-wifi"></i>
+            </div>
+            <h3>Complimentary WiFi</h3>
+            <p>Stay connected with high-speed internet and on-board entertainment systems.</p>
+        </div>
+        <div class="feature-card fade-in" style="animation-delay: 0.4s;">
+            <div class="feature-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3>Safe & Secure</h3>
+            <p>Professional drivers and real-time tracking for your peace of mind.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-info">
+                <a href="index.html" class="logo" style="margin-bottom: 2rem;">
+                    <i class="fa-solid fa-bus-simple"></i> SwiftRide
+                </a>
+                <p>SwiftRide is dedicated to providing superior transport services across the region. We prioritize your comfort, safety, and punctuality above all else.</p>
+                <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                    <a href="#" style="color: var(--text-muted); font-size: 1.2rem;"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" style="color: var(--text-muted); font-size: 1.2rem;"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" style="color: var(--text-muted); font-size: 1.2rem;"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="index.html">Schedules</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="about.html">Help Center</a></li>
+                    <li><a href="index.html">Policies</a></li>
+                    <li><a href="index.html">Accessibility</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="routes.html">Travel Routes</a></li>
+                    <li><a href="index.html">Chartered Buses</a></li>
+                    <li><a href="index.html">Airport Transfer</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 SwiftRide. All Rights Reserved. Engineered for excellence.
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
