@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - SwiftRide Tanzania</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body style="background: var(--bg-dark); min-height: 100vh; padding: 100px 5% 50px; display: flex; justify-content: center; align-items: center;">
+    <nav id="navbar" class="scrolled">
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-bus-simple"></i> SwiftRide
+        </a>
+        <div class="nav-container">
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="routes.html">Travel Routes</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li id="auth-nav"><a href="login.html" class="btn btn-primary">Login</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="fade-in" style="width: 100%; max-width: 600px; margin-top: 50px;">
+        <div style="background: var(--bg-card); border-radius: 30px; border: 1px solid var(--glass-border); padding: 3rem; text-align: center;">
+            <h2 style="margin-bottom: 2rem;">Secure Payment</h2>
+            
+            <div style="background: var(--glass); padding: 1.5rem; border-radius: 20px; display: flex; justify-content: space-between; margin-bottom: 3rem; border: 1px dashed var(--glass-border);">
+                <div>
+                    <p style="color: var(--text-muted); font-size: 0.8rem;">Total Amount</p>
+                    <p style="font-size: 1.5rem; font-weight: 700; color: var(--primary);">TSH 45,000</p>
+                </div>
+                <div>
+                    <p style="color: var(--text-muted); font-size: 0.8rem;">Reference ID</p>
+                    <p style="font-size: 1.5rem; font-weight: 700; color: white;">SR-99812</p>
+                </div>
+            </div>
+
+            <h3 style="margin-bottom: 1.5rem; font-size: 1.1rem; text-align: left;">Choose Payment Method</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 3rem;">
+                <div style="background: var(--glass); padding: 1rem; border-radius: 15px; border: 2px solid var(--primary); cursor: pointer;">
+                    <i class="fa-solid fa-mobile-screen-button" style="font-size: 1.5rem; color: #ff0000; margin-bottom: 0.5rem;"></i>
+                    <p style="font-weight: 600;">M-Pesa</p>
+                </div>
+                <div style="background: var(--glass); padding: 1rem; border-radius: 15px; border: 1px solid var(--glass-border); cursor: pointer;">
+                    <i class="fa-solid fa-mobile-screen-button" style="font-size: 1.5rem; color: #0099ff; margin-bottom: 0.5rem;"></i>
+                    <p style="font-weight: 600;">Tigo Pesa</p>
+                </div>
+            </div>
+
+            <div style="text-align: left; margin-bottom: 3rem;">
+                <label style="font-size: 0.9rem; color: var(--text-muted); display: block; margin-bottom: 0.5rem;">Push Notification Instructions</label>
+                <div style="background: rgba(255,255,255,0.03); padding: 1.2rem; border-radius: 15px; font-size: 0.9rem; color: var(--text-muted);">
+                    1. Check your phone for a push notification.<br>
+                    2. Enter your PIN to authorize the payment.<br>
+                    3. You will be redirected after confirmation.
+                </div>
+            </div>
+
+            <button onclick="simulatePayment()" class="btn btn-primary" style="width: 100%; padding: 1.2rem; font-size: 1.1rem;" id="pay-btn">
+                I Have Paid
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function simulatePayment() {
+            const btn = document.getElementById('pay-btn');
+            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Verifying Payment...';
+            btn.style.opacity = '0.7';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                const params = new URLSearchParams(window.location.search);
+                const name = params.get('name');
+                const seat = params.get('seat');
+                window.location.href = `success.html?name=${name}&seat=${seat}`;
+            }, 2500);
+        }
+    </script>
+</body>
+</html>
