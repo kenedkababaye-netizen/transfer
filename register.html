@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - SwiftRide Tanzania</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body style="background: linear-gradient(rgba(2, 6, 23, 0.9), rgba(2, 6, 23, 0.9)), url('assets/img/hero.png'); background-size: cover; background-position: center; min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 2rem;">
+    <nav id="navbar" class="scrolled">
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-bus-simple"></i> SwiftRide
+        </a>
+    </nav>
+
+    <div class="fade-in" style="width: 100%; max-width: 500px;">
+        <div style="background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); padding: 3rem; border-radius: 30px; box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.6);">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem; background: linear-gradient(to right, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Join SwiftRide</h1>
+                <p style="color: var(--text-muted);">Start your premium travel journey today</p>
+            </div>
+            
+            <form id="register-form">
+                <div class="input-group" style="margin-bottom: 1.5rem;">
+                    <label>Full Name</label>
+                    <input type="text" id="reg-name" placeholder="John Doe" required style="width: 100%;" />
+                </div>
+                <div class="input-group" style="margin-bottom: 1.5rem;">
+                    <label>Email Address</label>
+                    <input type="email" id="reg-email" placeholder="example@mail.com" required style="width: 100%;" />
+                </div>
+                <div class="input-group" style="margin-bottom: 1.5rem;">
+                    <label>Password</label>
+                    <input type="password" id="reg-pass" placeholder="••••••••" required style="width: 100%;" />
+                </div>
+                <div class="input-group" style="margin-bottom: 2rem;">
+                    <label>Confirm Password</label>
+                    <input type="password" id="reg-confirm" placeholder="••••••••" required style="width: 100%;" />
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem;">
+                    Create Account
+                </button>
+            </form>
+            
+            <p style="margin-top: 2rem; text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+                Already have an account? <a href="login.html" style="color: var(--primary); text-decoration: none; font-weight: 600;">Sign in here</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/auth.js"></script>
+</body>
+</html>
