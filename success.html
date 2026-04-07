@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Success - SwiftRide Tanzania</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .success-main { padding-top: 100px; padding-bottom: 5rem; background: var(--bg-dark); min-height: 100vh; }
+        .ticket-card { background: white; border-radius: 40px; padding: 4rem; max-width: 800px; margin: 3rem auto; color: #020617; position: relative; box-shadow: 0 50px 100px rgba(0,0,0,0.5); }
+        .ticket-header { border-bottom: 2px dashed #e2e8f0; padding-bottom: 2rem; margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: start; }
+        .ticket-info { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 3rem; }
+        .info-label { font-size: 0.8rem; color: #64748b; font-weight: 600; text-transform: uppercase; margin-bottom: 0.5rem; }
+        .info-value { font-size: 1.1rem; font-weight: 700; color: #0f172a; }
+        
+        @media print {
+            nav, footer, .btn-primary, .no-print { display: none !important; }
+            body { background: white !important; }
+            .ticket-card { box-shadow: none !important; margin: 0 !important; width: 100% !important; padding: 2rem !important; border: 1px solid #eee !important; }
+        }
+    </style>
+</head>
+<body class="success-main">
+    <nav id="navbar" class="scrolled">
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-bus-simple"></i> SwiftRide
+        </a>
+        <div class="nav-container">
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="routes.html">Travel Routes</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li id="auth-nav"><a href="login.html" class="btn btn-primary">Login</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="fade-in" style="text-align: center; color: white;">
+        <i class="fa-solid fa-circle-check" style="font-size: 5rem; color: #10b981; margin-bottom: 1.5rem;"></i>
+        <h1 style="font-size: 3rem;">Payment Confirmed!</h1>
+        <p style="color: var(--text-muted);">Your booking with SwiftRide is complete. Here is your ticket.</p>
+    </div>
+
+    <!-- Ticket Section -->
+    <div class="ticket-card fade-in" style="animation-delay: 0.3s;">
+        <div class="ticket-header">
+            <div>
+                <h2 style="font-size: 1.8rem; font-weight: 800; color: var(--primary);"><i class="fa-solid fa-bus"></i> SwiftRide Tanzania</h2>
+                <p style="color: #64748b; font-size: 0.9rem;">Boarding Ticket · Official Voucher</p>
+            </div>
+            <div style="text-align: right;">
+                <p style="background: #eef2ff; color: var(--primary); padding: 5px 15px; border-radius: 50px; font-weight: 700;">CONFIRMED</p>
+                <p style="margin-top: 10px; font-weight: 800; font-size: 1.2rem;">SR-99812</p>
+            </div>
+        </div>
+
+        <div class="ticket-info">
+            <div>
+                <p class="info-label">Passenger</p>
+                <p class="info-value" id="ticket-name">RUHUL KABIR</p>
+            </div>
+            <div style="text-align: center;">
+                <p class="info-label">Seat Number</p>
+                <p class="info-value" id="ticket-seat">12</p>
+            </div>
+            <div style="text-align: right;">
+                <p class="info-label">Date</p>
+                <p class="info-value" id="ticket-date">A6 APR, 2026</p>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 2px solid #f1f5f9; padding-top: 2.5rem; margin-top: 2rem;">
+            <div>
+                <p class="info-label">From</p>
+                <p style="font-size: 1.8rem; font-weight: 700;">Dar es Salaam</p>
+            </div>
+            <div style="color: #cbd5e1; font-size: 1.5rem;">
+                <i class="fa-solid fa-arrow-right-long"></i>
+            </div>
+            <div style="text-align: right;">
+                <p class="info-label">To</p>
+                <p style="font-size: 1.8rem; font-weight: 700;">Dodoma</p>
+            </div>
+        </div>
+
+        <div style="background: #f8fafc; padding: 2rem; border-radius: 20px; margin-top: 3rem; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <p style="font-size: 0.8rem; color: #64748b; margin-bottom: 0.5rem;"><i class="fa-solid fa-circle-exclamation"></i> Important</p>
+                <p style="font-size: 0.9rem; line-height: 1.5;">Please arrive 30 minutes before departure.<br>Show this digital ticket or printout to the crew.</p>
+            </div>
+            <div style="font-size: 4rem; opacity: 0.1;"><i class="fa-solid fa-qrcode"></i></div>
+        </div>
+
+        <div style="margin-top: 3rem; text-align: center;" class="no-print">
+            <button onclick="window.print()" class="btn btn-primary" style="padding: 1rem 3rem; font-size: 1.1rem; box-shadow: none; display: inline-flex; align-items: center; gap: 10px;">
+                <i class="fa-solid fa-print"></i> Print Ticket
+            </button>
+            <p style="margin-top: 1.5rem;"><a href="index.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">Back to Home</a></p>
+        </div>
+    </div>
+
+    <!-- Final Tanzanian Bus Image -->
+    <div style="max-width: 400px; margin: 3rem auto; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.3); border: 1px solid var(--glass-border);" class="no-print">
+        <img src="assets/img/bus_ext.png" alt="Kilimanjaro Express" style="width: 100%; display: block;">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const name = params.get('name') || 'Guest';
+            const seat = params.get('seat') || '--';
+            document.getElementById('ticket-name').textContent = name.toUpperCase();
+            document.getElementById('ticket-seat').textContent = seat;
+
+            const today = new Date();
+            const formattedDate = today.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+            document.getElementById('ticket-date').textContent = formattedDate;
+        });
+    </script>
+</body>
+</html>
