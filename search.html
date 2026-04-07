@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - SwiftRide</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .search-results-hero {
+            padding-top: 151px;
+            padding-bottom: 3rem;
+            background: linear-gradient(rgba(2, 6, 23, 0.9), rgba(2, 6, 23, 0.9)), url('assets/img/hero.png');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+
+        .results-container {
+            max-width: 1000px;
+            margin: -3rem auto 5rem;
+            padding: 0 5%;
+            position: relative;
+            z-index: 10;
+        }
+
+        .bus-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 0;
+            margin-bottom: 2rem;
+            display: grid;
+            grid-template-columns: 1.2fr 3fr 1.5fr 1fr;
+            align-items: center;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .bus-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5);
+        }
+
+        .bus-img-container {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .bus-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .bus-card:hover .bus-img-container img {
+            transform: scale(1.1);
+        }
+
+        .bus-info { padding: 1.5rem; }
+        .bus-info h3 { margin-bottom: 0.5rem; font-size: 1.3rem; }
+        .bus-info p { color: var(--text-muted); font-size: 0.9rem; }
+
+        .bus-time { text-align: center; padding: 1.5rem; }
+        .bus-time .time { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+        .bus-time .route { font-size: 0.9rem; color: var(--text-muted); }
+
+        .bus-price { text-align: right; padding: 1.5rem; }
+        .bus-price .amount { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .bus-price .seats { font-size: 0.8rem; color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .bus-card {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+            }
+            .bus-price { text-align: left; }
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar" class="scrolled">
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-bus-simple"></i> SwiftRide
+        </a>
+        <div class="nav-container">
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="routes.html">Travel Routes</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li id="auth-nav"><a href="login.html" class="btn btn-primary">Login</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header class="search-results-hero">
+        <h1 id="search-title">Finding Available Buses...</h1>
+        <p id="search-subtitle">Searching from Nairobi to Mombasa</p>
+    </header>
+
+    <main class="results-container" id="results-list">
+        <!-- Results will be injected here by JS -->
+        <div style="text-align: center; padding: 5rem; color: var(--text-muted);">
+            <i class="fa-solid fa-circle-notch fa-spin" style="font-size: 3rem; margin-bottom: 1.5rem; color: var(--primary);"></i>
+            <p>Scanning SwiftRide fleet for best options...</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid" style="padding: 0 8%;">
+            <div class="footer-info">
+                <a href="index.html" class="logo" style="margin-bottom: 2.5rem;">
+                    <i class="fa-solid fa-bus-simple"></i> SwiftRide
+                </a>
+                <p style="line-height: 1.8;">Redefining the standards of road travel in Tanzania since 2024. We combine modern technology with unrivaled service excellence.</p>
+                <div style="display: flex; gap: 1.2rem; margin-top: 2rem;">
+                    <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="routes.html">Our Routes</a></li>
+                    <li><a href="contact.html">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="contact.html">Contact Center</a></li>
+                    <li><a href="about.html">FAQs</a></li>
+                    <li><a href="about.html">Luggage Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="about.html">Privacy Policy</a></li>
+                    <li><a href="about.html">Terms of Service</a></li>
+                    <li><a href="about.html">Refund Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright" style="border-top: 1px solid var(--glass-border); margin-top: 3rem; padding-top: 3rem;">
+            &copy; 2026 SwiftRide Limited. All Rights Reserved. Engineered for Excellence in East Africa.
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/search.js"></script>
+</body>
+</html>
